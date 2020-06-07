@@ -5,6 +5,7 @@ class UserData{
         this.radio1 = null;
         this.radio2 = null;
         this.radio3 = null;
+        this.comments = null;
         this.index = null;
     }
 
@@ -28,8 +29,8 @@ class UserData{
             email:this.email,
             ans1:this.radio1,
             ans2:this.radio2,
-            ans3:this.radio3
-
+            ans3:this.radio3,
+            comments:this.comments
         });
     }
     reset(){
@@ -39,6 +40,7 @@ class UserData{
         this.radio1 = null;
         this.radio2 = null;
         this.radio3 = null;
+        this.comments = null;
     }
     
 }

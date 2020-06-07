@@ -5,7 +5,7 @@ var voter;
 var voterCount = 0;
 
 function setup() {
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(displayWidth-100,displayHeight);
   database = firebase.database();
 
   form = new Form();
@@ -16,5 +16,5 @@ function setup() {
 }
 
 function draw() {
-  background(255,255,255);  
+  background("yellow");  
 }

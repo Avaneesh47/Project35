@@ -8,6 +8,14 @@ class Form{
         this.reset = createButton("Reset");
         this.greeting = createElement('h2');
 
+        this.button.style('width','100px');
+        this.button.style('height','50px');
+        this.button.style('background','turquoise');
+
+        this.reset.style('width','100px');
+        this.reset.style('height','50px');
+        this.reset.style('background','turquoise');
+
         //q1
         this.question1 = createElement('h4',"Q1: Should we start a Covid-19 fundraiser?");
         this.radio1 = createRadio('h4');
@@ -30,14 +38,19 @@ class Form{
         this.radio3.option('August');
         this.radio3.option('September');
         this.radio3.style('width','60px');
+
+        this.description = createInput("Please add your comments here");
+        this.description.style('width','420px');
+        this.description.style('height','100px');
     }
     display(){
-        this.title.html("Voter Form");
-        this.title.position(displayWidth/2 - 60,0);
+        this.title.html("Covid-19 Fundraiser Survey Form");
+        this.title.position(displayWidth/2-100,0);
 
         this.nameInput.position(displayWidth/2 - 40,displayHeight/2 - 325);
         this.emailInput.position(displayWidth/2 - 40,displayHeight/2 - 300);
-        this.button.position(displayWidth/2 + 30,displayHeight/2 + 200);
+        this.button.position(displayWidth/2 + 30,displayHeight/2 + 300);
+        this.reset.position(displayWidth/2+140,displayHeight/2+300);
 
         this.question1.position(displayWidth/2 -600,200);
         this.radio1.position(displayWidth/2 -600,250);
@@ -48,6 +61,8 @@ class Form{
         this.question3.position(displayWidth/2 -100,200);
         this.radio3.position(displayWidth/2 -100,250);
 
+        this.description.position(displayWidth/2-400,displayHeight/2+100);
+
         this.button.mousePressed(()=>{
             this.greeting.html("Thanks for your Submission");
             this.greeting.position(displayWidth/2 -30,810);
@@ -56,6 +71,7 @@ class Form{
             voter.radio1 = this.radio1.value();
             voter.radio2 = this.radio2.value();
             voter.radio3 = this.radio3.value();
+            voter.comments = this.description.value();
             voterCount+=1;
             voter.index = voterCount;
             voter.update();
@@ -66,9 +82,7 @@ class Form{
             this.greeting.hide();
             this.nameInput.value('');
             this.emailInput.value('');
-            this.radio1.value();
-            this.radio2.value();
-            this.radio3.value();
+            this.description.value('');
         })
     }
 }
