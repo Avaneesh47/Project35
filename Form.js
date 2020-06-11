@@ -2,6 +2,8 @@ class Form{
     constructor(){
         this.nameInput = createInput("Name");
         this.emailInput = createInput("Email");
+        this.nameElement = createElement("h2");
+        this.emailElement = createElement("h2");
         this.button = createButton('Submit');
         this.title = createElement('h2');
         this.name = createElement('h4');
@@ -46,6 +48,12 @@ class Form{
     display(){
         this.title.html("Covid-19 Fundraiser Survey Form");
         this.title.position(displayWidth/2-100,0);
+
+        this.nameElement.html("Name:");
+        this.nameElement.position(displayWidth/2 - 200,displayHeight/2 - 350);
+
+        this.emailElement.html("Email:");
+        this.emailElement.position(displayWidth/2 - 200,displayHeight/2 - 320);
 
         this.nameInput.position(displayWidth/2 - 40,displayHeight/2 - 325);
         this.emailInput.position(displayWidth/2 - 40,displayHeight/2 - 300);
